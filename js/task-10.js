@@ -13,7 +13,6 @@ const destroy = btn[1];
 let amount = 0;
 
 function number(event) {
-  console.log(event.currentTarget.value);
   return (amount = event.currentTarget.value);
 }
 
