@@ -17,7 +17,9 @@ const galleryEl = document.querySelector(".gallery");
 
 const render = images.map((image) => {
   return `<li style="text-decoration: none; list-style: none; margin: 30px;"><img src= ${image.url} alt=${image.alt} width="320" style="display: block; margin-right: 30px;"></li>`
-});
+}).join();
+
+console.log(render);
 galleryEl.insertAdjacentHTML(
   "afterbegin", render);
 galleryEl.style.display = "flex";
