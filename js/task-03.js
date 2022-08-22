@@ -16,10 +16,8 @@ const images = [
 const galleryEl = document.querySelector(".gallery");
 
 const render = images.map((image) => {
-  galleryEl.insertAdjacentHTML(
-    "afterbegin",
-    `<li style="text-decoration: none; list-style: none; margin: 30px;"><img src= ${image.url} alt=${image.alt} width="320" style="display: block; margin-right: 30px;"></li>`
-  );
+  return `<li style="text-decoration: none; list-style: none; margin: 30px;"><img src= ${image.url} alt=${image.alt} width="320" style="display: block; margin-right: 30px;"></li>`
 });
-
+galleryEl.insertAdjacentHTML(
+  "afterbegin", render);
 galleryEl.style.display = "flex";

@@ -22,7 +22,7 @@ function createBoxes(event) {
   if (amount < 1) {
     alert("change number of boxes");
   }
-
+  destroyBoxes()
   let firstEl = 20;
   const step = 10;
 
