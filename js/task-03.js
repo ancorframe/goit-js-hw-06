@@ -13,24 +13,13 @@ const images = [
   },
 ];
 
-const render = images.map((image) => {
-  const itemEl = document.createElement("li");
-
-  const imgEl = document.createElement("img");
-  imgEl.src = image.url;
-  imgEl.alt = image.alt;
-  imgEl.width = 320;
-  imgEl.style.display = "block";
-  imgEl.style.marginRight = "30px";
-
-  itemEl.appendChild(imgEl);
-  itemEl.style.textDecoration = "none";
-  itemEl.style.listStyle = "none";
-  itemEl.style.margin = "30px";
-  return itemEl;
-});
-
 const galleryEl = document.querySelector(".gallery");
-galleryEl.append(...render);
+
+const render = images.map((image) => {
+  galleryEl.insertAdjacentHTML(
+    "afterbegin",
+    `<li style="text-decoration: none; list-style: none; margin: 30px;"><img src= ${image.url} alt=${image.alt} width="320" style="display: block; margin-right: 30px;"></li>`
+  );
+});
 
 galleryEl.style.display = "flex";
